@@ -85,10 +85,11 @@ new_dataset2 <- new_dataset2 %>%
     !(iso3 %in% oil_endowed_nations) ~ 0
   ))
 
+#Linear Regression for a Specific model
+fitted_model <- lm (X2019.x ~ indexed + X2019.y + Oil_Endowed, data =  new_dataset2)
 
-
-
-
+#Dataframe for residual
+model_resid <- data.frame(residuals(fitted_model))
 
 
 
